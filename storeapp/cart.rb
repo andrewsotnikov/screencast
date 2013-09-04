@@ -18,4 +18,8 @@ class Cart
   def validate
     @items.map{ |i| puts "Не определена цена" if i.price.nil? }
   end
+  
+  def delete_invalid_item
+    @items.delete_if{ |i| i.price.nil? }
+  end
 end
