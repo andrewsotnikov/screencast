@@ -1,5 +1,6 @@
 #coding: cp1251
 
+require_relative "string"
 require_relative "item_container"
 require_relative "item"
 require_relative "item_real"
