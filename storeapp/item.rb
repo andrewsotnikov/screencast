@@ -23,6 +23,10 @@ class Item
     yield(name)
   end
   
+  def to_s
+    "#{self.name}:#{self.price}:#{self.weight if self.respond_to?(:weight)}"
+  end
+  
   private
     def tax
       type_tax = (self.class == "VirtualItem") ? 2 : 5
