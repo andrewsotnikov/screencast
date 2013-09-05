@@ -1,6 +1,6 @@
 #coding: cp1251
 
-class Cart
+class Order
   attr_reader :items
 
   def initialize
@@ -8,4 +8,5 @@ class Cart
   end
   
   include ItemContainer
+  include ItemContainer::Info
 end

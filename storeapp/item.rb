@@ -15,7 +15,7 @@ class Item
   end
 
   def price
-    @price * (1 - self.class.discount) + tax
+    @price * (1 - self.class.discount) + tax if @price
   end
 
   def info
