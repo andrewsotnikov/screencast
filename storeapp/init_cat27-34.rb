@@ -21,3 +21,24 @@ cart.add_item( ItemAntique.new(name: "Picture") )
 cart.add_item( ItemReal.new(price: 150, name: "Car") )
 puts cart.all_Cars
 puts cart.all_Picture
+
+puts "==="
+puts cart.kind_of?(Cart)
+puts cart.kind_of?(ItemReal)
+puts @items[0].kind_of?(Item)
+puts @items[0].kind_of?(ItemReal)
+puts @items[0].kind_of?(ItemAntique)
+puts "==="
+puts @items[0].class == Item
+puts @items[0].class == ItemReal
+puts @items[0].class == ItemAntique
+puts "==="
+puts @items[0].respond_to?(:info)
+puts @items[0].respond_to?(:import)
+puts "==="
+puts @items[0].send(:price)
+puts @items[0].price
+puts @items[0].send(:tax)
+puts "==="
+method = "all_Cars"
+puts cart.send(method)

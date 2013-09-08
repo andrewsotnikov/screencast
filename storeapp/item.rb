@@ -10,8 +10,8 @@ class Item
     (Time.now.month == 9) ? @@discount + 0.2 : @@discount 
   end
 
-  def initialize(options={})
-    @price, @name = options[:price], options[:name]
+  def initialize(name, options={})
+    @price, @name = options[:price], name
   end
 
   def price

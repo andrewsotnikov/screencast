@@ -3,7 +3,7 @@
 class ItemReal < Item
   attr_reader :weight
    
-  def initialize(options={})
+  def initialize(name, options={})
     @weight = options[:weight]
     super
   end
