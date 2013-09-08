@@ -21,7 +21,7 @@ class Cart
   end
 
   def read_from_file
-    # return unless File.exists?(@filename)
+    return unless File.exists?(@filename)
     begin
       File.readlines(@filename).each{ |i| @items << i.to_item_real }
       @items.uniq!{ |i| i.name }
