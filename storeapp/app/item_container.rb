@@ -19,7 +19,7 @@ module ItemContainer
 
     def add_item(item)
       #unless item.price < self.class.min_price
-        @items.push item
+        @items.push item if item.price
       #end if item.price
     end
 

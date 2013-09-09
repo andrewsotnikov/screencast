@@ -11,5 +11,9 @@ class ItemReal < Item
   def info
     yield(weight)
     super
-  end  
+  end
+  
+  def to_s
+    super + ":#{self.weight}"
+  end
 end

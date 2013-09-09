@@ -1,6 +1,6 @@
 #coding: cp1251
 class Cart
-  attr_reader :items
+  attr_reader :items, :owner
   def initialize(owner = "shared")
     @items, @owner = [], owner
     @filename = "#{owner}_cart.txt"
@@ -8,6 +8,10 @@ class Cart
 
   include ItemContainer
   UNSUPPORTED_ITEMS = [ItemVirtual, ItemAntique]
+  
+  def add_items(*items)
+    @items += items
+  end
   
   class ItemNotSupport < StandardError; end
 

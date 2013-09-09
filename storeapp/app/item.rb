@@ -24,12 +24,12 @@ class Item
   end
   
   def to_s
-    "#{self.name}:#{self.price}:#{self.weight if self.respond_to?(:weight)}"
+    "#{self.name}:#{self.price}"
   end
   
   private
     def tax
-      type_tax = (self.class == "VirtualItem") ? 2 : 5
+      type_tax = (self.class == ItemVirtual) ? 1 : 2
       cost_tax = (@price > 10) ? @price * 0.2 : @price * 0.1
       type_tax + cost_tax 
     end
