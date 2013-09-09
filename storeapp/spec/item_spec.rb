@@ -23,7 +23,7 @@ describe Item do
   end
   
   it "расчет цены в соответсвии со специальной формулой" do
-    @item.price.should == 182
+    @item.price.should be(182.0)
     @item.price = 300
   end
   
