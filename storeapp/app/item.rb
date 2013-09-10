@@ -9,6 +9,11 @@ class Item
   def self.discount
     (Time.now.month == 9) ? @@discount + 0.2 : @@discount 
   end
+  
+  def self.show_info_about(attr, block)
+    @@show_info_about ||= {}
+    @@show_info_about[attr] = block
+  end
 
   def initialize(name, options={})
     @price, @name = options[:price], name
@@ -19,8 +24,8 @@ class Item
   end
 
   def info
-    yield(price)
     yield(name)
+    yield(price)
   end
   
   def to_s
